@@ -1,0 +1,12 @@
+# Ignorar arquivos gerados pelo Visual Studio
+*.suo
+*.user
+*.tmp
+*.pdb
+*.cache
+*.orig
+*.backup
+
+# Ignorar arquivos gerados durante a compilação
+obj/
+bin/
