@@ -22,9 +22,11 @@ public class Curso
     public void ListarAlunos()
     {
         Console.WriteLine($"Lista de alunos do curso: {Nome}:");
+        int numeroLista = 1;
         foreach(Pessoa aluno in Alunos)
         {
-            Console.WriteLine(aluno.NomeCompleto);
+            Console.WriteLine($"{numeroLista} - {aluno.NomeCompleto}");
+            numeroLista++;
         }
     }
 
