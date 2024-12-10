@@ -2,8 +2,17 @@ namespace ESSENCIALS.Models;
 
 public class Pessoa
 {
+    public Pessoa(){}
+
+    public Pessoa(string nome, string sobrenome)
+    {
+        Nome = nome;
+        Sobrenome = sobrenome;
+    }
+
     private string _nome;
     private int _idade;
+
     public string Nome
     {
         get => _nome.ToUpper();
@@ -35,6 +44,8 @@ public class Pessoa
         } 
     }
 
+    public string V1 { get; }
+    public string V2 { get; }
 
     public void Apresentar()
     {
