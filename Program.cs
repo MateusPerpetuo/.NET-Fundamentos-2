@@ -3,7 +3,7 @@ using ESSENCIALS.Models;
 using Newtonsoft.Json;
 
 
-// ---------- Deserializacao (JSON)  EXEMPLO 1  ------------
+// ---------- Deserializacao (JSON)  EXEMPLO 2 NULL EM PROPRIEDADE  ------------
 
 string contetudoArquivoVendas =  File.ReadAllText("Arquivos/vendas.json");
 
@@ -12,9 +12,54 @@ List<VendasDeserializando> listaVendas = JsonConvert.DeserializeObject
 
 foreach (VendasDeserializando venda in listaVendas)
 {
-    Console.WriteLine($"Id: {venda.Id}, Produto: {venda.Produto}, Valor: {venda.Valor}, Data: {venda.DataVenda}");
+    Console.WriteLine($"Id: {venda.Id}, Produto: {venda.Produto}, Valor: {venda.Valor}," 
+                      +  $"Data: {venda.DataVenda.ToString("dd/MM/yyyy HH:mm")}"
+                      +  $"{(venda.Desconto.HasValue ? $", Desconto de: {venda.Desconto}%" : "" )}");
     
 }
+
+
+
+
+
+
+
+
+
+
+// // ------------ Aula de tipos especiais NULL ()
+
+// bool? desejaReceberEmail = null;
+
+// if (desejaReceberEmail.HasValue && desejaReceberEmail.Value){
+//     Console.WriteLine($"O Usuário optou por receber e-mail");
+// }
+// else
+// {
+//     Console.WriteLine("O usuário não respondeu ou optou por não receber e-mail");
+// }
+
+
+
+
+
+
+
+
+
+
+// // ---------- Deserializacao (JSON)  EXEMPLO 1  ------------
+
+// string contetudoArquivoVendas =  File.ReadAllText("Arquivos/vendas.json");
+
+// List<VendasDeserializando> listaVendas = JsonConvert.DeserializeObject
+//                             <List<VendasDeserializando>>(contetudoArquivoVendas);
+
+// foreach (VendasDeserializando venda in listaVendas)
+// {
+//     Console.WriteLine($"Id: {venda.Id}, Produto: {venda.Produto}, Valor: {venda.Valor}, Data: {venda.DataVenda}");
+    
+// }
 
 
 
