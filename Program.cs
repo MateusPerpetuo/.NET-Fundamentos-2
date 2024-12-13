@@ -2,22 +2,45 @@
 using ESSENCIALS.Models;
 
 
-Pessoa p1 = new Pessoa("Mateus", "Silva");
+//------------ if ternario -------------------------
 
-(string nome, string sobrenome) = p1;
+int numero = 14;
 
-Console.WriteLine($"{nome} {sobrenome}");
+bool ehPar = false;
 
+ehPar =  numero % 2 == 0;
 
-
-
-
-
+Console.WriteLine($"O número {numero} é " + (ehPar ? "par" : "impar"));
 
 
 
 
 
+
+
+
+
+
+
+
+//------------ descontrutor--------
+
+// Pessoa p1 = new Pessoa("Mateus", "Silva");
+
+// (string nome, string sobrenome) = p1;
+
+// Console.WriteLine($"{nome} {sobrenome}");
+
+
+
+
+
+
+
+
+
+
+//------------ tupla --------
 
 // LeituraArquivo arquivo = new LeituraArquivo();
 // var (sucesso, linhasArquivo, _ // quantidadeLinhas para discarta a informação basta por um "_" na posição dela
