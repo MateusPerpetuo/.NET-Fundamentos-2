@@ -3,20 +3,66 @@ using ESSENCIALS.Models;
 using Newtonsoft.Json;
 
 
-// ---------- Deserializacao (JSON)  EXEMPLO 2 NULL EM PROPRIEDADE  ------------
+//  ------------ tipos anônimos em coleções
 
 string contetudoArquivoVendas =  File.ReadAllText("Arquivos/vendas.json");
 
 List<VendasDeserializando> listaVendas = JsonConvert.DeserializeObject
-                            <List<VendasDeserializando>>(contetudoArquivoVendas);
+                           <List<VendasDeserializando>>(contetudoArquivoVendas);
 
-foreach (VendasDeserializando venda in listaVendas)
+var listaAnonimo = listaVendas.Select(x => new { x.Produto, x.Valor });
+
+foreach (var v in listaAnonimo)
 {
-    Console.WriteLine($"Id: {venda.Id}, Produto: {venda.Produto}, Valor: {venda.Valor}," 
-                      +  $"Data: {venda.DataVenda.ToString("dd/MM/yyyy HH:mm")}"
-                      +  $"{(venda.Desconto.HasValue ? $", Desconto de: {venda.Desconto}%" : "" )}");
+    Console.WriteLine($"{v.Produto} - {v.Valor}");
     
 }
+
+
+
+
+
+
+
+
+
+
+// // --------- Tipos anônimos ----
+
+// var tipoAnonimo = new { Nome = "Mateus", Sobrenome = "Silva", Altura = 1.80m };
+
+// Console.WriteLine($"Nome: {tipoAnonimo.Nome}");
+// Console.WriteLine($"Sobrenome: {tipoAnonimo.Sobrenome}");
+// Console.WriteLine($"Altura: {tipoAnonimo.Altura}");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // ---------- Deserializacao (JSON)  EXEMPLO 2 NULL EM PROPRIEDADE  ------------
+
+// string contetudoArquivoVendas =  File.ReadAllText("Arquivos/vendas.json");
+
+// List<VendasDeserializando> listaVendas = JsonConvert.DeserializeObject
+//                             <List<VendasDeserializando>>(contetudoArquivoVendas);
+
+// foreach (VendasDeserializando venda in listaVendas)
+// {
+//     Console.WriteLine($"Id: {venda.Id}, Produto: {venda.Produto}, Valor: {venda.Valor}," 
+//                       +  $"Data: {venda.DataVenda.ToString("dd/MM/yyyy HH:mm")}"
+//                       +  $"{(venda.Desconto.HasValue ? $", Desconto de: {venda.Desconto}%" : "" )}");
+    
+// }
 
 
 
