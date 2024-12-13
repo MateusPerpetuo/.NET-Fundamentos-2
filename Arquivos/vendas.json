@@ -1,13 +1,13 @@
 [
   {
     "Id": 1,
-    "Produto": "Material de Escritório",
+    "Nome_Produto": "Material de Escritório",
     "Valor": 25.0,
     "DataVenda": "2024-12-13T12:02:33.8082702-03:00"
   },
   {
     "Id": 2,
-    "Produto": "Licença Software",
+    "Nome_Produto": "Licença Software",
     "Valor": 130.0,
     "DataVenda": "2024-12-13T12:02:33.8082702-03:00"
   }

@@ -2,22 +2,42 @@
 using ESSENCIALS.Models;
 using Newtonsoft.Json;
 
-// ---------- Serializacao (JSON)  EXEMPLO 1  ------------
 
-// ISO 8601 - padroniza a representação de tava entre sistemas, por isso a data no json vai sair diferente
-DateTime dataAtual =  DateTime.Now;
-List<Venda> listaVendas = new List<Venda>();
+// ---------- Deserializacao (JSON)  EXEMPLO 1  ------------
 
-Venda v1 = new Venda(1, "Material de Escritório", 25.0M, dataAtual);
-Venda v2 = new Venda(2, "Licença Software", 130.0M, dataAtual);
+string contetudoArquivoVendas =  File.ReadAllText("Arquivos/vendas.json");
 
-listaVendas.Add(v1);
-listaVendas.Add(v2);
+List<VendasDeserializando> listaVendas = JsonConvert.DeserializeObject
+                            <List<VendasDeserializando>>(contetudoArquivoVendas);
 
-string serializado =  JsonConvert.SerializeObject(listaVendas, Formatting.Indented);
-File.WriteAllText("Arquivos/vendas.json", serializado);
+foreach (VendasDeserializando venda in listaVendas)
+{
+    Console.WriteLine($"Id: {venda.Id}, Produto: {venda.Produto}, Valor: {venda.Valor}, Data: {venda.DataVenda}");
+    
+}
 
-Console.WriteLine($"{serializado}");
+
+
+
+
+
+
+// // ---------- Serializacao (JSON)  EXEMPLO 1  ------------
+
+// // ISO 8601 - padroniza a representação de tava entre sistemas, por isso a data no json vai sair diferente
+// DateTime dataAtual =  DateTime.Now;
+// List<Venda> listaVendas = new List<Venda>();
+
+// Venda v1 = new Venda(1, "Material de Escritório", 25.0M, dataAtual);
+// Venda v2 = new Venda(2, "Licença Software", 130.0M, dataAtual);
+
+// listaVendas.Add(v1);
+// listaVendas.Add(v2);
+
+// string serializado =  JsonConvert.SerializeObject(listaVendas, Formatting.Indented);
+// File.WriteAllText("Arquivos/vendas.json", serializado);
+
+// Console.WriteLine($"{serializado}");
  
 
 
