@@ -2,22 +2,39 @@
 using ESSENCIALS.Models;
 
 
-LeituraArquivo arquivo = new LeituraArquivo();
-var (sucesso, linhasArquivo, _ // quantidadeLinhas para discarta a informação basta por um "_" na posição dela
-) = arquivo.LeituraArquivoTupla("Arquivos/ArquivoLeitura.txt");
+Pessoa p1 = new Pessoa("Mateus", "Silva");
 
-if (sucesso)
-{
-    //Console.WriteLine($"Quantidade de linhas do arquivo: {quantidadeLinhas}");
-    foreach (var linha in linhasArquivo)
-    {
-        Console.WriteLine(linha);
-    }
-}
-else
-{
-    Console.WriteLine("Não foi possivel ler o arquivo!");
-}
+(string nome, string sobrenome) = p1;
+
+Console.WriteLine($"{nome} {sobrenome}");
+
+
+
+
+
+
+
+
+
+
+
+
+// LeituraArquivo arquivo = new LeituraArquivo();
+// var (sucesso, linhasArquivo, _ // quantidadeLinhas para discarta a informação basta por um "_" na posição dela
+//                                 ) = arquivo.LeituraArquivoTupla("Arquivos/ArquivoLeitura.txt");
+
+// if (sucesso)
+// {
+//     //Console.WriteLine($"Quantidade de linhas do arquivo: {quantidadeLinhas}");
+//     foreach (var linha in linhasArquivo)
+//     {
+//         Console.WriteLine(linha);
+//     }
+// }
+// else
+// {
+//     Console.WriteLine("Não foi possivel ler o arquivo!");
+// }
 
 
 
