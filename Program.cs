@@ -3,6 +3,25 @@ using ESSENCIALS.Models;
 using Newtonsoft.Json;
 
 
+//  Classes genéricas 
+MeuArrayGenerico<int> arrayInteiro = new MeuArrayGenerico<int>();
+
+arrayInteiro.AdicionarElementoArray(30);
+Console.WriteLine($"Array : {arrayInteiro[0]}");
+
+MeuArrayGenerico<string> arrayString = new MeuArrayGenerico<string>();
+
+arrayString.AdicionarElementoArray("testando");
+Console.WriteLine($"Array : {arrayString[0]}");
+
+
+
+
+
+
+
+
+
 // // ----- tipos dinamicos ---
 
 // dynamic variavelDinamica = 4;
