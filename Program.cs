@@ -1,16 +1,26 @@
 ﻿using System.Globalization;
 using ESSENCIALS.Models;
+using Newtonsoft.Json;
+
+// ---------- Serializacao (JSON)  EXEMPLO 1  ------------
+
+// ISO 8601 - padroniza a representação de tava entre sistemas, por isso a data no json vai sair diferente
+DateTime dataAtual =  DateTime.Now;
+List<Venda> listaVendas = new List<Venda>();
+
+Venda v1 = new Venda(1, "Material de Escritório", 25.0M, dataAtual);
+Venda v2 = new Venda(2, "Licença Software", 130.0M, dataAtual);
+
+listaVendas.Add(v1);
+listaVendas.Add(v2);
+
+string serializado =  JsonConvert.SerializeObject(listaVendas, Formatting.Indented);
+File.WriteAllText("Arquivos/vendas.json", serializado);
+
+Console.WriteLine($"{serializado}");
+ 
 
 
-//------------ if ternario -------------------------
-
-int numero = 14;
-
-bool ehPar = false;
-
-ehPar =  numero % 2 == 0;
-
-Console.WriteLine($"O número {numero} é " + (ehPar ? "par" : "impar"));
 
 
 
@@ -20,10 +30,30 @@ Console.WriteLine($"O número {numero} é " + (ehPar ? "par" : "impar"));
 
 
 
+// //------------ if ternario -------------------------
+
+
+// int numero = 14;
+
+// bool ehPar = false;
+
+// ehPar =  numero % 2 == 0;
+
+// Console.WriteLine($"O número {numero} é " + (ehPar ? "par" : "impar"));
 
 
 
-//------------ descontrutor--------
+
+
+
+
+
+
+
+
+
+//------------ descontrutor --------
+
 
 // Pessoa p1 = new Pessoa("Mateus", "Silva");
 
