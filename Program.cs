@@ -3,16 +3,32 @@ using ESSENCIALS.Models;
 using Newtonsoft.Json;
 
 
-//  Classes genéricas 
-MeuArrayGenerico<int> arrayInteiro = new MeuArrayGenerico<int>();
+// ---------- Metodos de Extensão
 
-arrayInteiro.AdicionarElementoArray(30);
-Console.WriteLine($"Array : {arrayInteiro[0]}");
+int numero = 15;
 
-MeuArrayGenerico<string> arrayString = new MeuArrayGenerico<string>();
+Console.WriteLine($"O número {numero} é " + (numero.EhPar() ? "par" : "impar"));
 
-arrayString.AdicionarElementoArray("testando");
-Console.WriteLine($"Array : {arrayString[0]}");
+
+
+
+
+
+
+
+
+
+
+// //  Classes genéricas 
+// MeuArrayGenerico<int> arrayInteiro = new MeuArrayGenerico<int>();
+
+// arrayInteiro.AdicionarElementoArray(30);
+// Console.WriteLine($"Array : {arrayInteiro[0]}");
+
+// MeuArrayGenerico<string> arrayString = new MeuArrayGenerico<string>();
+
+// arrayString.AdicionarElementoArray("testando");
+// Console.WriteLine($"Array : {arrayString[0]}");
 
 
 
