@@ -3,20 +3,43 @@ using ESSENCIALS.Models;
 using Newtonsoft.Json;
 
 
-//  ------------ tipos anônimos em coleções
+// // ----- tipos dinamicos ---
 
-string contetudoArquivoVendas =  File.ReadAllText("Arquivos/vendas.json");
+// dynamic variavelDinamica = 4;
 
-List<VendasDeserializando> listaVendas = JsonConvert.DeserializeObject
-                           <List<VendasDeserializando>>(contetudoArquivoVendas);
+// Console.WriteLine($"Tipo da variavel: {variavelDinamica.GetType()},  Valor: {variavelDinamica}");
 
-var listaAnonimo = listaVendas.Select(x => new { x.Produto, x.Valor });
+// variavelDinamica = "texto";
 
-foreach (var v in listaAnonimo)
-{
-    Console.WriteLine($"{v.Produto} - {v.Valor}");
+// Console.WriteLine($"Tipo da variavel: {variavelDinamica.GetType()},  Valor: {variavelDinamica}");
+
+// variavelDinamica = true;
+
+// Console.WriteLine($"Tipo da variavel: {variavelDinamica.GetType()},  Valor: {variavelDinamica}");
+
+
+
+
+
+
+
+
+
+
+// //  ------------ tipos anônimos em coleções
+
+// string contetudoArquivoVendas =  File.ReadAllText("Arquivos/vendas.json");
+
+// List<VendasDeserializando> listaVendas = JsonConvert.DeserializeObject
+//                            <List<VendasDeserializando>>(contetudoArquivoVendas);
+
+// var listaAnonimo = listaVendas.Select(x => new { x.Produto, x.Valor });
+
+// foreach (var v in listaAnonimo)
+// {
+//     Console.WriteLine($"{v.Produto} - {v.Valor}");
     
-}
+// }
 
 
 
