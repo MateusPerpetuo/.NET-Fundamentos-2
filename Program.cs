@@ -2,36 +2,79 @@
 using ESSENCIALS.Models;
 
 
-Dictionary<string, string> estados = new Dictionary<string, string>();
+LeituraArquivo arquivo = new LeituraArquivo();
+var (sucesso, linhasArquivo, _ // quantidadeLinhas para discarta a informação basta por um "_" na posição dela
+) = arquivo.LeituraArquivoTupla("Arquivos/ArquivoLeitura.txt");
 
-estados.Add("SP", "São paulo");
-estados.Add("MG", "Minas Gerais");
-estados.Add("BA", "Bahia");
-
-foreach(var item in estados)
+if (sucesso)
 {
-    Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+    //Console.WriteLine($"Quantidade de linhas do arquivo: {quantidadeLinhas}");
+    foreach (var linha in linhasArquivo)
+    {
+        Console.WriteLine(linha);
+    }
 }
-
-System.Console.WriteLine("---------------------");
-
-estados.Remove("BA");
-estados["SP"] = "São Paulo - Valor alterado";
-
-foreach(var item in estados)
-{
-    Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
-}
-
-string chave = "BA";
-if(estados.ContainsKey(chave))
-{
-    Console.WriteLine($"Valor existente {chave}");
-} 
 else
 {
-    Console.WriteLine($"Valor não existente. É seguro adicionar a chave {chave}");
+    Console.WriteLine("Não foi possivel ler o arquivo!");
 }
+
+
+
+
+// (int id, string nome, string sobrenome, decimal altura) tupla = (1, "Mateus", "Silva", 1.80m);
+
+// //ValueTuple<int, string, string , decimal> outroExempleTupla = (1, "Mateus", "Silva", 1.80m);
+
+// //var outroExempleTuplaCreate =  Tuple.Create(1, "Mateus", "Silva", 1.80m);
+
+
+// Console.WriteLine($"id: {tupla.id}");
+// Console.WriteLine($"Nome: {tupla.nome}");
+// Console.WriteLine($"Sobrenome: {tupla.sobrenome}");
+// Console.WriteLine($"Altura: {tupla.altura}");
+
+
+
+
+
+
+
+
+
+
+
+
+// Dictionary<string, string> estados = new Dictionary<string, string>();
+
+// estados.Add("SP", "São paulo");
+// estados.Add("MG", "Minas Gerais");
+// estados.Add("BA", "Bahia");
+
+// foreach(var item in estados)
+// {
+//     Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+// }
+
+// System.Console.WriteLine("---------------------");
+
+// estados.Remove("BA");
+// estados["SP"] = "São Paulo - Valor alterado";
+
+// foreach(var item in estados)
+// {
+//     Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+// }
+
+// string chave = "BA";
+// if(estados.ContainsKey(chave))
+// {
+//     Console.WriteLine($"Valor existente {chave}");
+// } 
+// else
+// {
+//     Console.WriteLine($"Valor não existente. É seguro adicionar a chave {chave}");
+// }
 
 
 
